@@ -1,0 +1,135 @@
+{% extends 'turfapp/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<!-- Document Wrapper
+============================================= -->
+<div id="wrapper" class="clearfix">
+
+
+    <!-- Slider
+    ============================================= -->
+    <section id="slider" class="slider-element slider-parallax swiper_wrapper min-vh-60 min-vh-md-100 include-header" data-loop="false">
+
+        <div class="slider-inner">
+            <div class="swiper-container swiper-parent">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide dark">
+                        <div class="container" style="padding-top:100px;">
+                            <div class="slider-caption slider-caption-center">
+                                <div  class = "col-md-12" style="border-radius: 25px;">
+
+
+                                    <table class="table table-hover table-dark"  style="border-radius:10px; text-align:center">
+                                      <!--<thead>-->
+                                        <!--<tr>-->
+                                          <!--<th scope="col">Slots</th>-->
+                                          <!--<th scope="col">Handle</th>-->
+                                        <!--</tr>-->
+                                      <!--</thead>-->
+                                      <tbody>
+                                      <form action="{% url 'payment' slot_det.id date %}" method="post">
+                                          {% csrf_token %}
+                                       <tr>
+                                          <td>Date</td>
+                                            <td>{{ date }}</td>
+                                        </tr>
+                                        <tr>
+                                          <td>Name</td>
+                                            <td>{{ user_det.name }}</td>
+                                        </tr>
+                                       <tr>
+                                          <td>Phone Number</td>
+                                            <td>{{ user_det.mobile }}</td>
+                                        </tr>
+                                      <tr>
+                                          <td>Slot</td>
+                                            <td>{{ slot_det.slot_name }}</td>
+                                        </tr>
+                                      <tr>
+
+                                          <td>Amount</td>
+                                            <td>₹{{ slot_det.price }}</td>
+                                        </tr>
+
+                                          {% if offer_objs %}
+                                           <tr>
+                                          <td>Offer Applied</td>
+
+                                            <td>
+                                                <div class="dropdown">
+                                                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    {{ selected_offers.bname }}
+                                                     {% if not selected_offers %} Select Offer {% endif %}
+                                                  </button>
+                                                  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                                    {% for offer_obj in offer_objs %}
+                                                    <a class="dropdown-item" href="{% url 'payment' slot_det.id date offer_obj.id %}" >
+                                                         {{ offer_obj.bname }} (
+                                                      {% if offer_obj.is_percentage %} {{ offer_obj.rate }}% {% endif %}
+                                                      {% if not offer_obj.is_percentage %} ₹{{ offer_obj.rate }} {% endif %} )
+                                                    </a>
+                                                      {% endfor %}
+
+                                                  </div>
+                                                </div>
+
+                                            </td>
+                                        </tr>
+                                           <tr>
+
+                                          <td>Offer Discount</td>
+                                            <td>₹{{ offer_amount }}</td>
+                                        </tr>
+                                       {% endif %}
+                                      <tr>
+                                          <td>Coin</td>
+                                            <td>₹{{ usable_amount }}</td>
+                                        </tr>
+                                      <tr>
+                                          <td>Total Amount</td>
+                                            <td>₹{{ total_amount }}</td>
+                                        </tr>
+
+                                          {% if not messages %}
+                                      <tr>
+                                           <td><button type="submit" class="btn btn-success"  placeholder="">confirm</button> </td>
+                                           <td><button type="submit" class="btn btn-danger"  placeholder="">Back</button> </td>
+
+                                        </tr>
+                                          {% endif %}
+                                        <tr>
+                                            <td style = "color:red">
+                                                {% for message in messages %}
+                                                {{ message }}
+                                                {% endfor %}
+                                            </td>
+                                            {% if messages %}
+                                            <td>
+                                               <a href = "{% url 'book' %}" class="btn btn-info"  placeholder="">Back to booking</a>
+                                            </td>
+                                            {% endif %}
+                                        </tr>
+                                      </form>
+                                      </tbody>
+                                    </table>
+
+
+                                 </div>
+                            </div>
+                          </div>
+                            <div class="swiper-slide-bg" style="background-image: url('{% static 'turfapp/demos/business/images/slider/11.jpg' %}');"></div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+</div>
+
+{% endblock %}

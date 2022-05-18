@@ -1,0 +1,661 @@
+
+{% extends 'turfapp/base.html' %}
+{% load static %}
+{% block content %}
+
+
+		<!-- Content
+		============================================= -->
+		<section id="content">
+			<div class="content-wrap">
+				<div class="container clearfix">
+
+					<div class="row clearfix">
+
+						<div class="col-md-9">
+
+							<!--<img src="images/icons/avatar.jpg" class="alignleft img-circle img-thumbnail my-0" alt="Avatar" style="max-width: 84px;">-->
+
+							<div class="heading-block border-0">
+								<h3>Feedback</h3>
+								<!--<span>Your Profile Bio</span>-->
+							</div>
+
+							<div class="clear"></div>
+
+							<div class="row clearfix">
+
+								<div class="col-lg-12">
+
+									<div class="tabs tabs-alt clearfix" id="tabs-profile">
+
+
+										<div class="tab-container">
+
+											<div class="tab-content clearfix" id="tab-feeds">
+
+
+												<div  class="col-md-20">
+													<form action = {% url 'feedback' %} method = 'POST'>
+													{% csrf_token %}
+
+													  <div class="form-group row">
+														<!--<label for="address" class="col-sm-2 col-form-label"></label>-->
+														<div class="col-sm-6">
+															<textarea id = "feedback" name = "feedback" cols="60" rows = "10"></textarea>
+														  <!--<input type="textarea " class="form-control" name = "feedback" id="address" placeholder=""  value="">-->
+														</div>
+													  </div>
+														<div class="col-sm-6">
+															<button type="submit" class="btn btn-primary"  placeholder="">Post</button>
+														</div>
+													</form>
+												</div>
+
+											</div>
+											<div class="tab-content clearfix" id="tab-posts">
+
+												<!-- Posts
+												============================================= -->
+												<div class="row gutter-40 posts-md mt-4">
+
+													<div class="entry col-12">
+														<div class="grid-inner row align-items-center no-gutters">
+															<div class="entry-image col-md-4">
+																<a href="images/blog/full/17.jpg" data-lightbox="image"><img src="images/blog/small/17.jpg" alt="Standard Post with Image"></a>
+															</div>
+															<div class="col-md-8 pl-md-4">
+																<div class="entry-title title-sm">
+																	<h3><a href="blog-single.html">This is a Standard post with a Preview Image</a></h2>
+																</div>
+																<div class="entry-meta">
+																	<ul>
+																		<li><i class="icon-calendar3"></i> 10th Feb 2021</li>
+																		<li><a href="blog-single.html#comments"><i class="icon-comments"></i> 13</a></li>
+																		<li><a href="#"><i class="icon-camera-retro"></i></a></li>
+																	</ul>
+																</div>
+																<div class="entry-content">
+																	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+																	<a href="blog-single.html" class="more-link">Read More</a>
+																</div>
+															</div>
+														</div>
+													</div>
+
+													<div class="entry col-12">
+												   		<div class="grid-inner row align-items-center no-gutters">
+															<div class="entry-image col-md-4">
+																<iframe src="https://player.vimeo.com/video/87701971" width="500" height="281" allow="autoplay; fullscreen" allowfullscreen></iframe>
+															</div>
+															<div class="col-md-8 pl-md-4">
+																<div class="entry-title title-sm">
+																	<h3><a href="blog-single-full.html">This is a Standard post with an Embedded Video</a></h2>
+																</div>
+																<div class="entry-meta">
+																	<ul>
+																		<li><i class="icon-calendar3"></i> 16th Feb 2021</li>
+																		<li><a href="blog-single-full.html#comments"><i class="icon-comments"></i> 19</a></li>
+																		<li><a href="#"><i class="icon-film"></i></a></li>
+																	</ul>
+																</div>
+																<div class="entry-content">
+																	<p>Asperiores, tenetur, blanditiis, quaerat odit ex exercitationem.</p>
+																	<a href="blog-single-full.html" class="more-link">Read More</a>
+																</div>
+															</div>
+														</div>
+													</div>
+
+													<div class="entry col-12">
+														<div class="grid-inner row align-items-center no-gutters">
+															<div class="entry-image col-md-4">
+																<div class="fslider" data-arrows="false" data-lightbox="gallery">
+																	<div class="flexslider">
+																		<div class="slider-wrap">
+																			<div class="slide"><a href="images/blog/full/10.jpg" data-lightbox="gallery-item"><img src="images/blog/small/10.jpg" alt="Standard Post with Gallery"></a></div>
+																			<div class="slide"><a href="images/blog/full/20.jpg" data-lightbox="gallery-item"><img src="images/blog/small/20.jpg" alt="Standard Post with Gallery"></a></div>
+																			<div class="slide"><a href="images/blog/full/21.jpg" data-lightbox="gallery-item"><img src="images/blog/small/21.jpg" alt="Standard Post with Gallery"></a></div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+															<div class="col-md-8 pl-md-4">
+																<div class="entry-title title-sm">
+																	<h3><a href="blog-single-small.html">This is a Standard post with a Slider Gallery</a></h3>
+																</div>
+																<div class="entry-meta">
+																	<ul>
+																		<li><i class="icon-calendar3"></i> 24th Feb 2021</li>
+																		<li><a href="blog-single-small.html#comments"><i class="icon-comments"></i> 21</a></li>
+																		<li><a href="#"><i class="icon-picture"></i></a></li>
+																	</ul>
+																</div>
+																<div class="entry-content">
+																	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+																	<a href="blog-single-small.html" class="more-link">Read More</a>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+
+											</div>
+											<div class="tab-content clearfix" id="tab-replies">
+
+												<div class="clear topmargin-sm"></div>
+												<ol class="commentlist border-0 m-0 p-0 clearfix">
+													<li class="comment even thread-even depth-1" id="li-comment-1">
+														<div id="comment-1" class="comment-wrap clearfix">
+															<div class="comment-meta">
+																<div class="comment-author vcard">
+																	<span class="comment-avatar clearfix">
+																	<img alt='Image' src='https://0.gravatar.com/avatar/ad516503a11cd5ca435acc9bb6523536?s=60' class='avatar avatar-60 photo avatar-default' height='60' width='60' /></span>
+																</div>
+															</div>
+															<div class="comment-content clearfix">
+																<div class="comment-author">John Doe<span><a href="#" title="Permalink to this comment">April 24, 2012 at 10:46 am</a></span></div>
+																<p>Donec sed odio dui. Nulla vitae elit libero, a pharetra augue. Nullam id dolor id nibh ultricies vehicula ut id elit. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+																<a class='comment-reply-link' href='#'><i class="icon-reply"></i></a>
+															</div>
+															<div class="clear"></div>
+														</div>
+														<ul class='children'>
+															<li class="comment byuser comment-author-_smcl_admin odd alt depth-2" id="li-comment-3">
+																<div id="comment-3" class="comment-wrap clearfix">
+																	<div class="comment-meta">
+																		<div class="comment-author vcard">
+
+																			<span class="comment-avatar clearfix">
+																			<img alt='Image' src='https://1.gravatar.com/avatar/30110f1f3a4238c619bcceb10f4c4484?s=40&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D40&amp;r=G' class='avatar avatar-40 photo' height='40' width='40' /></span>
+
+																		</div>
+																	</div>
+																	<div class="comment-content clearfix">
+																		<div class="comment-author"><a href='#' rel='external nofollow' class='url'>SemiColon</a><span><a href="#" title="Permalink to this comment">April 25, 2012 at 1:03 am</a></span></div>
+
+																		<p>Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+
+																		<a class='comment-reply-link' href='#'><i class="icon-reply"></i></a>
+																	</div>
+																	<div class="clear"></div>
+																</div>
+															</li>
+														</ul>
+													</li>
+
+													<li class="comment byuser comment-author-_smcl_admin even thread-odd thread-alt depth-1" id="li-comment-2">
+														<div class="comment-wrap clearfix">
+															<div class="comment-meta">
+																<div class="comment-author vcard">
+																	<span class="comment-avatar clearfix">
+																	<img alt='Image' src='https://1.gravatar.com/avatar/30110f1f3a4238c619bcceb10f4c4484?s=60&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D60&amp;r=G' class='avatar avatar-60 photo' height='60' width='60' /></span>
+																</div>
+															</div>
+															<div class="comment-content clearfix">
+																<div class="comment-author"><a href='https://themeforest.net/user/semicolonweb' rel='external nofollow' class='url'>SemiColon</a><span><a href="#" title="Permalink to this comment">April 25, 2012 at 1:03 am</a></span></div>
+
+																<p>Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</p>
+
+																<a class='comment-reply-link' href='#'><i class="icon-reply"></i></a>
+															</div>
+															<div class="clear"></div>
+														</div>
+													</li>
+
+												</ol>
+
+											</div>
+											<div class="tab-content clearfix" id="tab-connections">
+
+												<div class="row topmargin-sm">
+													<div class="col-lg-3 col-md-6 bottommargin">
+
+														<div class="team">
+															<div class="team-image">
+																<img src="images/team/3.jpg" alt="John Doe">
+															</div>
+															<div class="team-desc">
+																<div class="team-title"><h4>John Doe</h4><span>CEO</span></div>
+																<a href="#" class="social-icon inline-block si-small si-light si-rounded si-facebook">
+																	<i class="icon-facebook"></i>
+																	<i class="icon-facebook"></i>
+																</a>
+																<a href="#" class="social-icon inline-block si-small si-light si-rounded si-twitter">
+																	<i class="icon-twitter"></i>
+																	<i class="icon-twitter"></i>
+																</a>
+																<a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">
+																	<i class="icon-gplus"></i>
+																	<i class="icon-gplus"></i>
+																</a>
+															</div>
+														</div>
+
+													</div>
+
+													<div class="col-lg-3 col-md-6 bottommargin">
+
+														<div class="team">
+															<div class="team-image">
+																<img src="images/team/2.jpg" alt="Josh Clark">
+															</div>
+															<div class="team-desc">
+																<div class="team-title"><h4>Josh Clark</h4><span>Co-Founder</span></div>
+																<a href="#" class="social-icon inline-block si-small si-light si-rounded si-facebook">
+																	<i class="icon-facebook"></i>
+																	<i class="icon-facebook"></i>
+																</a>
+																<a href="#" class="social-icon inline-block si-small si-light si-rounded si-twitter">
+																	<i class="icon-twitter"></i>
+																	<i class="icon-twitter"></i>
+																</a>
+																<a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">
+																	<i class="icon-gplus"></i>
+																	<i class="icon-gplus"></i>
+																</a>
+															</div>
+														</div>
+
+													</div>
+
+													<div class="col-lg-3 col-md-6 bottommargin">
+
+														<div class="team">
+															<div class="team-image">
+																<img src="images/team/8.jpg" alt="Mary Jane">
+															</div>
+															<div class="team-desc">
+																<div class="team-title"><h4>Mary Jane</h4><span>Sales</span></div>
+																<a href="#" class="social-icon inline-block si-small si-light si-rounded si-facebook">
+																	<i class="icon-facebook"></i>
+																	<i class="icon-facebook"></i>
+																</a>
+																<a href="#" class="social-icon inline-block si-small si-light si-rounded si-twitter">
+																	<i class="icon-twitter"></i>
+																	<i class="icon-twitter"></i>
+																</a>
+																<a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">
+																	<i class="icon-gplus"></i>
+																	<i class="icon-gplus"></i>
+																</a>
+															</div>
+														</div>
+
+													</div>
+
+													<div class="col-lg-3 col-md-6">
+
+														<div class="team">
+															<div class="team-image">
+																<img src="images/team/4.jpg" alt="Nix Maxwell">
+															</div>
+															<div class="team-desc">
+																<div class="team-title"><h4>Nix Maxwell</h4><span>Support</span></div>
+																<a href="#" class="social-icon inline-block si-small si-light si-rounded si-facebook">
+																	<i class="icon-facebook"></i>
+																	<i class="icon-facebook"></i>
+																</a>
+																<a href="#" class="social-icon inline-block si-small si-light si-rounded si-twitter">
+																	<i class="icon-twitter"></i>
+																	<i class="icon-twitter"></i>
+																</a>
+																<a href="#" class="social-icon inline-block si-small si-light si-rounded si-gplus">
+																	<i class="icon-gplus"></i>
+																	<i class="icon-gplus"></i>
+																</a>
+															</div>
+														</div>
+
+													</div>
+												</div>
+
+											</div>
+
+										</div>
+
+									</div>
+
+								</div>
+
+							</div>
+
+						</div>
+
+						<div class="w-100 line d-block d-md-none"></div>
+
+						<div class="col-md-3">
+
+							<div class="list-group">
+								<a href="user" class="list-group-item list-group-item-action d-flex justify-content-between"><div>Profile</div><i class="icon-user"></i></a>
+								<a href="userbooking" class="list-group-item list-group-item-action d-flex justify-content-between"><div>Booking</div><i class="icon-laptop2"></i></a>
+								<a href="userreferral" class="list-group-item list-group-item-action d-flex justify-content-between"><div>Referral</div><i class="icon-envelope2"></i></a>
+								<a href="userhistory" class="list-group-item list-group-item-action d-flex justify-content-between"><div>History</div><i class="icon-credit-cards"></i></a>
+								<a href="feedback" class="list-group-item list-group-item-action d-flex justify-content-between"><div>Feedback</div><i class="icon-cog"></i></a>
+								<!--<a href="#" class="list-group-item list-group-item-action d-flex justify-content-between"><div>Settings</div><i class="icon-cog"></i></a>-->
+								<a href="{% url 'log_out_user' %}" class="list-group-item list-group-item-action d-flex justify-content-between"><div>Logout</div><i class="icon-line2-logout"></i></a>
+							</div>
+
+							<!--<div class="fancy-title topmargin title-border">-->
+								<!--<h4>About Me</h4>-->
+							<!--</div>-->
+
+							<!--<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsum laboriosam, dignissimos veniam obcaecati. Quasi eaque, odio assumenda porro explicabo laborum!</p>-->
+
+							<!--<div class="fancy-title topmargin title-border">-->
+								<!--<h4>Social Profiles</h4>-->
+							<!--</div>-->
+
+							<!--<a href="#" class="social-icon si-facebook si-small si-rounded si-light" title="Facebook">-->
+								<!--<i class="icon-facebook"></i>-->
+								<!--<i class="icon-facebook"></i>-->
+							<!--</a>-->
+
+							<!--<a href="#" class="social-icon si-gplus si-small si-rounded si-light" title="Google+">-->
+								<!--<i class="icon-gplus"></i>-->
+								<!--<i class="icon-gplus"></i>-->
+							<!--</a>-->
+
+							<!--<a href="#" class="social-icon si-dribbble si-small si-rounded si-light" title="Dribbble">-->
+								<!--<i class="icon-dribbble"></i>-->
+								<!--<i class="icon-dribbble"></i>-->
+							<!--</a>-->
+
+							<!--<a href="#" class="social-icon si-flickr si-small si-rounded si-light" title="Flickr">-->
+								<!--<i class="icon-flickr"></i>-->
+								<!--<i class="icon-flickr"></i>-->
+							<!--</a>-->
+
+							<!--<a href="#" class="social-icon si-linkedin si-small si-rounded si-light" title="LinkedIn">-->
+								<!--<i class="icon-linkedin"></i>-->
+								<!--<i class="icon-linkedin"></i>-->
+							<!--</a>-->
+
+							<!--<a href="#" class="social-icon si-twitter si-small si-rounded si-light" title="Twitter">-->
+								<!--<i class="icon-twitter"></i>-->
+								<!--<i class="icon-twitter"></i>-->
+							<!--</a>-->
+
+						<!--</div>-->
+
+					</div>
+
+				</div>
+			</div>
+		</section><!-- #content end -->
+
+		<!-- Footer
+		============================================= -->
+		<!--<footer id="footer" class="dark">-->
+			<!--<div class="container">-->
+
+				<!--&lt;!&ndash; Footer Widgets-->
+				<!--============================================= &ndash;&gt;-->
+				<!--<div class="footer-widgets-wrap">-->
+
+					<!--<div class="row col-mb-50">-->
+						<!--<div class="col-lg-8">-->
+
+							<!--<div class="row col-mb-50">-->
+								<!--<div class="col-md-4">-->
+
+									<!--<div class="widget clearfix">-->
+
+										<!--<img src="images/footer-widget-logo.png" alt="Image" class="footer-logo">-->
+
+										<!--<p>We believe in <strong>Simple</strong>, <strong>Creative</strong> &amp; <strong>Flexible</strong> Design Standards.</p>-->
+
+										<!--<div style="background: url('images/world-map.png') no-repeat center center; background-size: 100%;">-->
+											<!--<address>-->
+												<!--<strong>Headquarters:</strong><br>-->
+												<!--795 Folsom Ave, Suite 600<br>-->
+												<!--San Francisco, CA 94107<br>-->
+											<!--</address>-->
+											<!--<abbr title="Phone Number"><strong>Phone:</strong></abbr> (1) 8547 632521<br>-->
+											<!--<abbr title="Fax"><strong>Fax:</strong></abbr> (1) 11 4752 1433<br>-->
+											<!--<abbr title="Email Address"><strong>Email:</strong></abbr> info@canvas.com-->
+										<!--</div>-->
+
+									<!--</div>-->
+
+								<!--</div>-->
+
+								<!--<div class="col-md-4">-->
+
+									<!--<div class="widget widget_links clearfix">-->
+
+										<!--<h4>Blogroll</h4>-->
+
+										<!--<ul>-->
+											<!--<li><a href="https://codex.wordpress.org/">Documentation</a></li>-->
+											<!--<li><a href="https://wordpress.org/support/forum/requests-and-feedback">Feedback</a></li>-->
+											<!--<li><a href="https://wordpress.org/extend/plugins/">Plugins</a></li>-->
+											<!--<li><a href="https://wordpress.org/support/">Support Forums</a></li>-->
+											<!--<li><a href="https://wordpress.org/extend/themes/">Themes</a></li>-->
+											<!--<li><a href="https://wordpress.org/news/">Canvas Blog</a></li>-->
+											<!--<li><a href="https://planet.wordpress.org/">Canvas Planet</a></li>-->
+										<!--</ul>-->
+
+									<!--</div>-->
+
+								<!--</div>-->
+
+								<!--<div class="col-md-4">-->
+
+									<!--<div class="widget clearfix">-->
+										<!--<h4>Recent Posts</h4>-->
+
+										<!--<div class="posts-sm row col-mb-30" id="post-list-footer">-->
+											<!--<div class="entry col-12">-->
+												<!--<div class="grid-inner row">-->
+													<!--<div class="col">-->
+														<!--<div class="entry-title">-->
+															<!--<h4><a href="#">Lorem ipsum dolor sit amet, consectetur</a></h4>-->
+														<!--</div>-->
+														<!--<div class="entry-meta">-->
+															<!--<ul>-->
+																<!--<li>10th July 2021</li>-->
+															<!--</ul>-->
+														<!--</div>-->
+													<!--</div>-->
+												<!--</div>-->
+											<!--</div>-->
+
+											<!--<div class="entry col-12">-->
+												<!--<div class="grid-inner row">-->
+													<!--<div class="col">-->
+														<!--<div class="entry-title">-->
+															<!--<h4><a href="#">Elit Assumenda vel amet dolorum quasi</a></h4>-->
+														<!--</div>-->
+														<!--<div class="entry-meta">-->
+															<!--<ul>-->
+																<!--<li>10th July 2021</li>-->
+															<!--</ul>-->
+														<!--</div>-->
+													<!--</div>-->
+												<!--</div>-->
+											<!--</div>-->
+
+											<!--<div class="entry col-12">-->
+												<!--<div class="grid-inner row">-->
+													<!--<div class="col">-->
+														<!--<div class="entry-title">-->
+															<!--<h4><a href="#">Debitis nihil placeat, illum est nisi</a></h4>-->
+														<!--</div>-->
+														<!--<div class="entry-meta">-->
+															<!--<ul>-->
+																<!--<li>10th July 2021</li>-->
+															<!--</ul>-->
+														<!--</div>-->
+													<!--</div>-->
+												<!--</div>-->
+											<!--</div>-->
+										<!--</div>-->
+									<!--</div>-->
+
+								<!--</div>-->
+							<!--</div>-->
+
+						<!--</div>-->
+
+						<!--<div class="col-lg-4">-->
+
+							<!--<div class="row col-mb-50">-->
+								<!--<div class="col-md-4 col-lg-12">-->
+									<!--<div class="widget clearfix" style="margin-bottom: -20px;">-->
+
+										<!--<div class="row">-->
+											<!--<div class="col-lg-6 bottommargin-sm">-->
+												<!--<div class="counter counter-small"><span data-from="50" data-to="15065421" data-refresh-interval="80" data-speed="3000" data-comma="true"></span></div>-->
+												<!--<h5 class="mb-0">Total Downloads</h5>-->
+											<!--</div>-->
+
+											<!--<div class="col-lg-6 bottommargin-sm">-->
+												<!--<div class="counter counter-small"><span data-from="100" data-to="18465" data-refresh-interval="50" data-speed="2000" data-comma="true"></span></div>-->
+												<!--<h5 class="mb-0">Clients</h5>-->
+											<!--</div>-->
+										<!--</div>-->
+
+									<!--</div>-->
+								<!--</div>-->
+
+								<!--<div class="col-md-5 col-lg-12">-->
+									<!--<div class="widget subscribe-widget clearfix">-->
+										<!--<h5><strong>Subscribe</strong> to Our Newsletter to get Important News, Amazing Offers &amp; Inside Scoops:</h5>-->
+										<!--<div class="widget-subscribe-form-result"></div>-->
+										<!--<form id="widget-subscribe-form" action="include/subscribe.php" method="post" class="mb-0">-->
+											<!--<div class="input-group mx-auto">-->
+												<!--<div class="input-group-prepend">-->
+													<!--<div class="input-group-text"><i class="icon-email2"></i></div>-->
+												<!--</div>-->
+												<!--<input type="email" id="widget-subscribe-form-email" name="widget-subscribe-form-email" class="form-control required email" placeholder="Enter your Email">-->
+												<!--<div class="input-group-append">-->
+													<!--<button class="btn btn-success" type="submit">Subscribe</button>-->
+												<!--</div>-->
+											<!--</div>-->
+										<!--</form>-->
+									<!--</div>-->
+								<!--</div>-->
+
+								<!--<div class="col-md-3 col-lg-12">-->
+									<!--<div class="widget clearfix" style="margin-bottom: -20px;">-->
+
+										<!--<div class="row">-->
+											<!--<div class="col-6 col-md-12 col-lg-6 clearfix bottommargin-sm">-->
+												<!--<a href="#" class="social-icon si-dark si-colored si-facebook mb-0" style="margin-right: 10px;">-->
+													<!--<i class="icon-facebook"></i>-->
+													<!--<i class="icon-facebook"></i>-->
+												<!--</a>-->
+												<!--<a href="#"><small style="display: block; margin-top: 3px;"><strong>Like us</strong><br>on Facebook</small></a>-->
+											<!--</div>-->
+											<!--<div class="col-6 col-md-12 col-lg-6 clearfix">-->
+												<!--<a href="#" class="social-icon si-dark si-colored si-rss mb-0" style="margin-right: 10px;">-->
+													<!--<i class="icon-rss"></i>-->
+													<!--<i class="icon-rss"></i>-->
+												<!--</a>-->
+												<!--<a href="#"><small style="display: block; margin-top: 3px;"><strong>Subscribe</strong><br>to RSS Feeds</small></a>-->
+											<!--</div>-->
+										<!--</div>-->
+
+									<!--</div>-->
+								<!--</div>-->
+
+							<!--</div>-->
+
+						<!--</div>-->
+					<!--</div>-->
+
+				<!--</div>&lt;!&ndash; .footer-widgets-wrap end &ndash;&gt;-->
+
+			<!--</div>-->
+
+			<!--&lt;!&ndash; Copyrights-->
+			<!--============================================= &ndash;&gt;-->
+			<!--<div id="copyrights">-->
+				<!--<div class="container">-->
+
+					<!--<div class="row col-mb-30">-->
+
+						<!--<div class="col-md-6 text-center text-md-left">-->
+							<!--Copyrights &copy; 2020 All Rights Reserved by Canvas Inc.<br>-->
+							<!--<div class="copyright-links"><a href="#">Terms of Use</a> / <a href="#">Privacy Policy</a></div>-->
+						<!--</div>-->
+
+						<!--<div class="col-md-6 text-center text-md-right">-->
+							<!--<div class="d-flex justify-content-center justify-content-md-end">-->
+								<!--<a href="#" class="social-icon si-small si-borderless si-facebook">-->
+									<!--<i class="icon-facebook"></i>-->
+									<!--<i class="icon-facebook"></i>-->
+								<!--</a>-->
+
+								<!--<a href="#" class="social-icon si-small si-borderless si-twitter">-->
+									<!--<i class="icon-twitter"></i>-->
+									<!--<i class="icon-twitter"></i>-->
+								<!--</a>-->
+
+								<!--<a href="#" class="social-icon si-small si-borderless si-gplus">-->
+									<!--<i class="icon-gplus"></i>-->
+									<!--<i class="icon-gplus"></i>-->
+								<!--</a>-->
+
+								<!--<a href="#" class="social-icon si-small si-borderless si-pinterest">-->
+									<!--<i class="icon-pinterest"></i>-->
+									<!--<i class="icon-pinterest"></i>-->
+								<!--</a>-->
+
+								<!--<a href="#" class="social-icon si-small si-borderless si-vimeo">-->
+									<!--<i class="icon-vimeo"></i>-->
+									<!--<i class="icon-vimeo"></i>-->
+								<!--</a>-->
+
+								<!--<a href="#" class="social-icon si-small si-borderless si-github">-->
+									<!--<i class="icon-github"></i>-->
+									<!--<i class="icon-github"></i>-->
+								<!--</a>-->
+
+								<!--<a href="#" class="social-icon si-small si-borderless si-yahoo">-->
+									<!--<i class="icon-yahoo"></i>-->
+									<!--<i class="icon-yahoo"></i>-->
+								<!--</a>-->
+
+								<!--<a href="#" class="social-icon si-small si-borderless si-linkedin">-->
+									<!--<i class="icon-linkedin"></i>-->
+									<!--<i class="icon-linkedin"></i>-->
+								<!--</a>-->
+							<!--</div>-->
+
+							<!--<div class="clear"></div>-->
+
+							<!--<i class="icon-envelope2"></i> info@canvas.com <span class="middot">&middot;</span> <i class="icon-headphones"></i> +1-11-6541-6369 <span class="middot">&middot;</span> <i class="icon-skype2"></i> CanvasOnSkype-->
+						<!--</div>-->
+
+					<!--</div>-->
+
+				<!--</div>-->
+			<!--</div>&lt;!&ndash; #copyrights end &ndash;&gt;-->
+		<!--</footer>&lt;!&ndash; #footer end &ndash;&gt;-->
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="js/jquery.js"></script>
+	<script src="js/plugins.min.js"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="js/functions.js"></script>
+
+	<script>
+		jQuery( "#tabs-profile" ).on( "tabsactivate", function( event, ui ) {
+			jQuery( '.flexslider .slide' ).resize();
+		});
+	</script>
+{% endblock %}
+
+<!--</body>-->
+<!--</html>-->

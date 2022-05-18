@@ -1,0 +1,76 @@
+{% extends 'turfapp/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<!-- Document Wrapper
+============================================= -->
+<div id="wrapper" class="clearfix">
+
+
+    <!-- Slider
+    ============================================= -->
+    <section id="slider" class="slider-element slider-parallax swiper_wrapper min-vh-60 min-vh-md-100 include-header" data-loop="false">
+
+        <div class="slider-inner">
+            <div class="swiper-container swiper-parent">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide dark">
+                        <div class="container" style="padding-top:100px;">
+                            <div class="slider-caption slider-caption-center">
+                                <div  class = "col-md-12" style="border-radius: 25px;">
+
+
+                                    <table class="table table-hover table-dark" style="border-radius:10px">
+
+                                      <tbody>
+                                        <tr><form action="{% url 'book' %}" method="GET">
+                                          <td>Select Date</td>
+                                          <td><input type="date" name="search_date" value = "{{ current_date }}"> </td>
+                                            <td><button type="submit" class="btn btn-primary"  placeholder="">Get Slot</button> </td>
+                                            </form>
+                                        </tr>
+                                      </tbody>
+                                    </table>
+
+                                    <table class="table table-hover table-dark" style="border-radius:10px">
+                                      <thead>
+                                        <tr>
+                                          <th scope="col">#</th>
+                                          <th scope="col">Starting Time</th>
+                                          <th scope="col">Ending time</th>
+                                            <th scope="col">Price</th>
+                                          <th scope="col">Handle</th>
+                                        </tr>
+                                      </thead>
+                                      <tbody>
+                                       {% for slot in slots %}
+                                        <tr>
+                                          <th scope="row">{{ forloop.counter }}</th>
+                                          <td>{{ slot.time }}</td>
+                                          <td>{{ slot.end_time }}</td>
+                                            <td>{{ slot.price }}</td>
+                                          <td><a  type="submit" class="btn btn-success" href="{% url 'payment' slot.id current_date %}"  placeholder="">Book</a></td>
+                                        </tr>
+                                      {% endfor %}
+                                      </tbody>
+                                    </table>
+
+
+                                 </div>
+                            </div>
+                          </div>
+                            <div class="swiper-slide-bg" style="background-image: url('{% static 'turfapp/demos/business/images/slider/11.jpg' %}');"></div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+    </section>
+</div>
+
+{% endblock %}

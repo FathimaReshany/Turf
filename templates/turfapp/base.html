@@ -1,0 +1,262 @@
+{% load static %}
+
+<html dir="ltr" lang="en-US">
+
+<body class="stretched">
+<header id="header" class="full-header transparent-header dark header-size-md" data-sticky-class="not-dark" data-responsive-class="not-dark" data-sticky-offset="full" data-sticky-offset-negative="80">
+        <div id="header-wrap">
+            <div class="container" >
+                <div class="header-row" >
+
+                    <!-- Logo
+                    ============================================= -->
+                    <div id="logo">
+                        <a href="index.html" class="standard-logo" data-dark-logo="{% static 'turfapp/demos/business/images/logo1.jpeg' %}"><img src="{% static 'turfapp/demos/business/images/logo1.jpeg'%}" alt="Milagro Logo"></a>
+                        <a href="index.html" class="retina-logo" data-dark-logo="{% static 'turfapp/demos/business/images/logo1.jpeg'%}"><img src="{% static 'turfapp/demos/business/images/logo1.jpeg'%}" alt="Milagro Logo"></a>
+                    </div><!-- #logo end -->
+
+                    <div class="header-misc">
+
+
+                    </div>
+
+{#                    <div id="primary-menu-trigger">#}
+{#                        <svg class="svg-trigger" viewBox="0 0 100 100"><path d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20"></path><path d="m 30,50 h 40"></path><path d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20"></path></svg>#}
+{#                    </div>#}
+
+                    <!-- Primary Navigation
+                    ============================================= -->
+                    <nav class="primary-menu not-dark">
+
+                        <ul class="menu-container" >
+                            <li class="menu-item active"><a class="menu-link" href="{% url 'home' %}"><div style="color: black">Home</div></a></li>
+                           <li class="menu-item"><a class="menu-link" href="{% url 'pricing' %}"><div style="color: black">Pricing</div></a></li>
+                            <li class="menu-item"><a class="menu-link" href="{% url 'book' %}"><div style="color: black">Book</div></a></li>
+                            <li class="menu-item"><a class="menu-link" href="{% url 'image' %}"><div style="color: black">Gallery</div></a></li>
+							{% if not user.is_authenticated %}
+							<li class="menu-item"><a class="menu-link" href="{% url 'login' %}"><div style="color: black">Login</div></a></li>
+							{% endif %}
+							{% if user.is_authenticated %}
+							<li class="menu-item"><a class="menu-link" href="#"><div style="color: black">Account</div></a>
+								<ul class="sub-menu-container">
+									<li class="menu-item"><a class="menu-link" href="{% url 'user' %}"><div style="color: black">Profile</div></a></li>
+									<li class="menu-item"><a class="menu-link" href="{% url 'userbooking' %}"><div style="color: black">Bookings</div></a></li>
+									<li class="menu-item"><a class="menu-link" href="{% url 'userreferral' %}"><div style="color: black">Referral</div></a></li>
+									<li class="menu-item"><a class="menu-link" href="{% url 'userhistory' %}"><div style="color: black">History</div></a></li>
+									<li class="menu-item"><a class="menu-link" href="{% url 'feedback' %}"><div style="color: black">Feedback</div></a></li>
+									<li class="menu-item"><a class="menu-link" href="{% url 'log_out_user' %}"><div style="color: black">Logout</div></a></li>
+								</ul>
+							</li>
+							{% endif %}
+                        </ul>
+
+                    </nav><!-- #primary-menu end -->
+
+<!--                    <form class="top-search-form" action="search.html" method="get">-->
+<!--                        <input type="text" name="q" class="form-control" value="" placeholder="Type &amp; Hit Enter.." autocomplete="off">-->
+<!--                    </form>-->
+
+                </div>
+            </div>
+        </div>
+        <div class="header-wrap-clone"></div>
+    </header><!-- #header end -->
+
+
+
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="author" content="SemiColonWeb" />
+
+	<!-- Stylesheets
+	============================================= -->
+	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,400i,600,700|Open+Sans:300,400,600,700,800,900&display=swap" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" href="{% static 'turfapp/css/bootstrap.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'turfapp/style.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'turfapp/css/dark.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'turfapp/css/swiper.css' %}" type="text/css" />
+
+	<!-- Business Demo Specific Stylesheet -->
+	<link rel="stylesheet" href="{% static 'turfapp/demos/business/business.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'turfapp/demos/business/css/fonts.css' %}" type="text/css" />
+	<!-- / -->
+
+	<link rel="stylesheet" href="{% static 'turfapp/css/font-icons.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'turfapp/css/animate.css' %}" type="text/css" />
+	<link rel="stylesheet" href="{% static 'turfapp/css/magnific-popup.css' %}" type="text/css" />
+
+	<link rel="stylesheet" href="{% static 'turfapp/css/et-line.css' %}" type="text/css" />
+
+	<link rel="stylesheet" href="{% static 'turfapp/css/custom.css' %}" type="text/css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+	<!-- Theme Color
+	============================================= -->
+	<!--<link rel="stylesheet" href="{% static 'turfapp/css/colors.php?color=00BED7' %}" type="text/css" />-->
+
+	<!-- Document Title
+	============================================= -->
+	<title>Milagro | Soccer Academy</title>
+
+</head>
+
+<body class="stretched">
+
+{% block content %}
+
+{% endblock %}
+
+<!-- Footer
+		============================================= -->
+		<footer id="footer" class="border-0" style="padding: 30px 0; background-color: #FFF">
+			<div class="container clearfix">
+				<!-- Footer Widgets
+				============================================= -->
+			<!--	<div class="footer-widgets-wrap">
+
+					<div class="row col-mb-50">
+						<div class="col-md-3">
+							<img src="{% static 'turfapp/demos/business/images/logo@2x.png' %}" alt="Image" height="100" style="margin-top: -30px">
+						</div>
+
+						<div class="col-md-9">
+
+							<div class="row col-mb-30">
+								<div class="col-sm-6 col-lg-3">
+									<div class="widget widget_links widget-li-noicon clearfix">
+										<h4>Hire</h4>
+										<ul>
+											<li><a href="#">Documentation</a></li>
+											<li><a href="#">Feedback</a></li>
+											<li><a href="#">Plugins</a></li>
+											<li><a href="#">Support Forums</a></li>
+											<li><a href="#">Themes</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="col-sm-6 col-lg-3">
+									<div class="widget widget_links widget-li-noicon clearfix">
+										<h4>Community</h4>
+										<ul>
+											<li><a href="#">Documentation</a></li>
+											<li><a href="#">Feedback</a></li>
+											<li><a href="#">Plugins</a></li>
+											<li><a href="#">Support Forums</a></li>
+											<li><a href="#">Themes</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="col-sm-6 col-lg-3">
+									<div class="widget widget_links widget-li-noicon clearfix">
+										<h4>Learn</h4>
+										<ul>
+											<li><a href="#">Documentation</a></li>
+											<li><a href="#">Feedback</a></li>
+											<li><a href="#">Plugins</a></li>
+											<li><a href="#">Support Forums</a></li>
+											<li><a href="#">Themes</a></li>
+										</ul>
+									</div>
+								</div>
+								<div class="col-sm-6 col-lg-3">
+									<div class="widget widget_links widget-li-noicon clearfix">
+										<h4>About</h4>
+										<ul>
+											<li><a href="#">Documentation</a></li>
+											<li><a href="#">Feedback</a></li>
+											<li><a href="#">Plugins</a></li>
+											<li><a href="#">Support Forums</a></li>
+											<li><a href="#">Themes</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="line line-sm"></div> -->
+
+							<div class="row justify-content-between col-mb-30">
+								 <div class="col-12 col-md-auto text-center text-md-left">
+									<!-- <small class="font-weight-light" style="color: #AAA">Copyrights &copy; 2020 All Rights Reserved by Canvas Inc.</small> -->
+								</div>
+
+								<div class="col-12 col-md-auto text-center text-md-right">
+									<a href="#" class="social-icon inline-block si-mini si-rounded si-colored si-facebook">
+										<i class="icon-facebook"></i>
+										<i class="icon-facebook"></i>
+									</a>
+
+							<!--		<a href="#" class="social-icon inline-block si-mini si-rounded si-colored si-twitter">
+										<i class="icon-twitter"></i>
+										<i class="icon-twitter"></i>
+									</a>
+
+									<a href="#" class="social-icon inline-block si-mini si-rounded si-colored si-gplus">
+										<i class="icon-gplus"></i>
+										<i class="icon-gplus"></i>
+									</a>  -->
+
+								<!--	<a href="#" class="social-icon inline-block si-mini si-rounded si-colored si-pinterest">
+										<i class="icon-pinterest"></i>
+										<i class="icon-pinterest"></i>
+									</a> -->
+
+								<!--	<a href="#" class="social-icon inline-block si-mini si-rounded si-colored si-vimeo">
+										<i class="icon-vimeo"></i>
+										<i class="icon-vimeo"></i>
+									</a> -->
+
+									<a href="#" class="social-icon inline-block si-mini si-rounded si-colored si-instagram">
+										<i class="icon-instagram"></i>
+										<i class="icon-instagram"></i>
+									</a>
+
+									<a href="#" class="social-icon inline-block si-mini si-rounded si-colored si-whatsapp">
+										<i class="icon-whatsapp"></i>
+										<i class="icon-whatsappS"></i>
+									</a>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</footer><!-- #footer end -->
+
+	</div><!-- #wrapper end -->
+
+	<!-- Go To Top
+	============================================= -->
+	<div id="gotoTop" class="icon-angle-up"></div>
+
+	<!-- JavaScripts
+	============================================= -->
+	<script src="{% static 'turfapp/js/jquery.js' %}"></script>
+	<script src="{% static  'turfapp/js/plugins.min.js' %}"></script>
+
+	<!-- Footer Scripts
+	============================================= -->
+	<script src="{% static 'turfapp/js/functions.js' %}"></script>
+
+	<script>
+		jQuery(window).on( 'pluginCarouselReady', function(){
+			$('#oc-features').owlCarousel({
+				items: 1,
+				margin: 60,
+			    nav: true,
+			    navText: ['<i class="icon-line-arrow-left"></i>','<i class="icon-line-arrow-right"></i>'],
+			    dots: false,
+			    stagePadding: 30,
+			    responsive:{
+					768: { items: 2 },
+					1200: { stagePadding: 200 }
+				},
+			});
+		});
+	</script>
+
+
+
+</body>
+
+
+</html>

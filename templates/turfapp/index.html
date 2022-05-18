@@ -1,0 +1,350 @@
+{% extends 'turfapp/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<!-- Document Wrapper
+============================================= -->
+<div id="wrapper" class="clearfix">
+
+
+
+
+    <section id="slider" class="slider-element slider-parallax swiper_wrapper min-vh-60 min-vh-md-100 include-header" data-loop="false">
+
+        <div class="slider-inner">
+            <div class="swiper-container swiper-parent">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide dark">
+                        <div class="container">
+                            <div class="slider-caption slider-caption-center">
+                                <div>
+                                    <h2 class="font-primary nott">Milagro.</h2>
+                                    <p style="font-size:130%">Soccer Academy.</p>
+                                    <p class="font-weight-light font-primary d-none d-sm-block">Soccer For All.</p>
+                                    {% if not user.is_authenticated %}
+                                    <a href="login" class="button button-rounded button-large nott ls0 font-primary">Booking</a>
+                                    {% endif %}
+							        {% if user.is_authenticated %}
+                                    <a href="book" class="button button-rounded button-large nott ls0 font-primary">Booking</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide-bg" style="background-image: url('{% static 'turfapp/demos/business/images/slider/a.jpg' %}');"></div>
+                    </div>
+                    <div class="swiper-slide dark">
+                        <div class="container">
+                            <div class="slider-caption slider-caption-center">
+                                <div>
+                                    <h2 class="font-primary">Milagro.</h2>
+                                    <p style="font-size:130%">Soccer Academy.</p>
+                                    <p class="font-weight-light font-primary d-none d-sm-block">Soccer For All.</p>
+                                    {% if not user.is_authenticated %}
+                                    <a href="login" class="button button-rounded button-large nott ls0 font-primary">Booking</a>
+                                    {% endif %}
+							        {% if user.is_authenticated %}
+                                    <a href="book" class="button button-rounded button-large nott ls0 font-primary">Booking</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide-bg" style="background-image: url('{% static 'TurfApp/demos/business/images/slider/b.jpg' %}');"></div>
+                    </div>
+                    <div class="swiper-slide dark">
+                        <div class="container">
+                            <div class="slider-caption slider-caption-center">
+                                <div>
+                                    <h2 class="font-primary">Milagro.</h2>
+                                    <p style="font-size:130%">Soccer Academy.</p>
+                                    <p class="font-weight-light font-primary d-none d-sm-block">Soccer For All.</p>
+                                    {% if not user.is_authenticated %}
+                                    <a href="login" class="button button-rounded button-large nott ls0 font-primary">Booking</a>
+                                    {% endif %}
+							        {% if user.is_authenticated %}
+                                    <a href="book" class="button button-rounded button-large nott ls0 font-primary">Booking</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide-bg" style="background-image: url('{% static 'TurfApp/demos/business/images/slider/c.jpg' %}');"></div>
+                    </div>
+                </div>
+                <!-- Slider Arrows
+                ============================================= -->
+{#                <div class="slider-arrow-left" class="bg-transparent"><i class="icon-line-arrow-left"></i></div>#}
+{#                <div class="slider-arrow-right" class="bg-transparent"><i class="icon-line-arrow-right"></i></div>#}
+            </div>
+
+            <!-- Slider Mouse Icon
+            ============================================= -->
+            <a href="#" data-scrollto="#content" data-offset="0" class="dark one-page-arrow"><img class="infinite animated fadeInDown" src="{% static 'TurfApp/demos/business/images/mouse.svg' %}" alt="Image" ></a>
+        </div>
+
+    </section>
+
+    <!-- Content
+    ============================================= -->
+    <section id="content">
+
+        <div class="content-wrap pb-0" style="z-index: 1;">
+
+            <div class="container topmargin clearfix">
+
+                <!-- What We Do
+                ============================================= -->
+                <div class="heading-block center border-0" data-heading="W">
+                    <h3>MILAGRO SOCCER ACADEMY</h3>
+                </div>
+                <div class="row clearfix">
+                    <div class="center col-lg-8 offset-lg-2 bottommargin">
+                        <h3 class="text-rotater font-secondary" data-separator="," data-rotate="fadeInRight" data-speed="3500">MILAGRO SOCCER ACADEMY are used to play football . It has vibrant environment and very safe to play. <span class="t-rotate color">Slot booking,check availability,Booking history,Gallery,Offers</span><!--<br> just everything is possible with Canvas. --></h3>
+                    </div>
+
+                    <div class="clear"></div>
+
+                    <!-- Features colomns
+                    ================================1============= -->
+                    <div class="row clearfix">
+                        <div class="col-lg-4 bottommargin-sm">
+                            <div class="feature-box media-box fbox-bg">
+                                <div class="fbox-media">
+                                    <a href="#"><img src="{% static 'turfapp/demos/business/images/featured/4.jpg'%}" alt="Featured Box Image"></a>
+                                </div>
+                                <div class="fbox-content fbox-content-lg">
+                                    <h3 class="nott ls0 font-weight-semibold">Vibrant Environment<span class="subtitle font-secondary font-weight-light ls0">Vibrant environment to play.</span></h3>
+                                    <a href="#" class="button-link border-0 color"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 bottommargin-sm">
+                            <div class="feature-box media-box fbox-bg">
+                                <div class="fbox-media">
+                                    <a href="#"><img src="{% static 'turfapp/demos/business/images/featured/hygene.jpeg'%}" alt="Featured Box Image"></a>
+                                </div>
+                                <div class="fbox-content fbox-content-lg">
+                                    <h3 class="nott ls0 font-weight-semibold">Safe & Hygenic<span class="subtitle font-secondary font-weight-light ls0">Sanitized court.</span></h3>
+                                    <a href="#" class="button-link border-0 color"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 bottommargin-sm">
+                            <div class="feature-box media-box fbox-bg">
+                                <div class="fbox-media">
+                                    <a href="#"><img src="{% static 'turfapp/demos/business/images/featured/cafe.jpg'%}" alt="Featured Box Image"></a>
+                                </div>
+                                <div class="fbox-content fbox-content-lg">
+                                    <h3 class="nott ls0 font-weight-semibold">Cafeteria<span class="subtitle font-secondary font-weight-light ls0">opening soon.</span></h3>
+                                    <a href="#" class="button-link border-0 color"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How We Work
+            ============================================= -->
+            <div class="section bg-transparent clearfix">
+                <div class="container clearfix">
+                    <div class="heading-block bottommargin-lg center border-0" data-heading="W">
+                        <h3 class="nott ls0">Milagro Offers</h3>
+                    </div>
+                </div>
+
+                <!-- How We Work - Carousel
+                ============================================= -->
+               <div id="oc-features" class="owl-carousel owl-carousel-full image-carousel carousel-widget customjs">
+
+                   {% for offer in offers %}
+                   <div class="oc-item">
+                        <div class="row cleafix">
+                            <div class="col-xl-8">
+                                <img src={{ offer.bimage.url }} alt="Image">
+                            </div>
+                            <div class="col-xl-4" style="padding: 20px 0 0 20px;">
+                                <h3>{{ offer.bname }}</h3>
+                                <p>{{ offer.description }}</p>
+                                <a href="{% url 'book' %}" class="button-link">Book Now</a>
+                            </div>
+                        </div>
+                   </div>
+
+                   {% endfor %}
+
+                </div>
+            </div>
+
+
+            <!-- About Us
+            ============================================= -->
+            <div class="section p-0 mt-0 bg-transparent clearfix" style="border-top: 1px solid #EEE; border-bottom: 1px solid #EEE;">
+                <div class="row align-items-stretch clearfix">
+
+                    <video width="750" height="700" controls>
+                        <source src="{% static 'turfapp/demos/business/images/sections/video1.mp4' %}" type="video/mp4" >
+                    </video>
+
+                    <div class="col-lg-6 col-padding">
+                        <div>
+                            <div style="position: relative;">
+                                <div class="heading-block border-0" data-heading="A">
+                                    <h3 class="nott ls0">About Us</h3>
+                                </div>
+                            </div>
+
+                            <!-- About Us Featured Boxes
+                            ============================================= -->
+                            <div class="row clearfix">
+                                <div class="col-lg-10 col-md-8 bottommargin">
+                                    <div class="feature-box fbox-plain">
+                                        <div class="fbox-icon">
+                                            <a href="#"><i class="icon-et-globe"></i></a>
+                                        </div>
+                                        <div class="fbox-content">
+                                            <h3>Location</h3>
+                                            <p> Opposite of Niya Wheels, Chettappalam, Mananthavady, Kerala 670645.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10 col-md-8 bottommargin">
+                                    <div class="feature-box fbox-plain">
+                                        <div class="fbox-icon">
+                                            <a href="#"><i class="icon-et-gears"></i></a>
+                                        </div>
+                                        <div class="fbox-content">
+                                            <h3>Working</h3>
+                                            <p>Open 24 hours.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-10 col-md-8">
+                                    <div class="feature-box fbox-plain">
+                                        <div class="fbox-icon">
+                                            <a href="#"><i class="icon-et-document"></i></a>
+                                        </div>
+                                        <div class="fbox-content">
+                                            <h3>Since</h3>
+                                            <p>January 2021.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Our Works
+            ============================================= -->
+            <div class="section bg-transparent mb-0">
+                <div class="container">
+                    <div class="heading-block center border-0" data-heading="O">
+                        <h3 class="nott ls0">Feedback</h3>
+                    </div>
+
+
+
+
+
+
+
+            <!-- Parallax Area
+            ============================================= -->
+            <div class="section parallax topmargin-lg mb-0 border-top-0 clearfix" style="background-image: url('{% static 'turfapp/demos/business/images/sections/b.jpg' %}'); background-size: cover;" data-bottom-top="background-position:0px 300px;" data-top-bottom="background-position:0px -300px;">
+                <div class="container clearfix">
+
+                    <div class="row cleafix">
+                        <div class="col-md-6 dark" style="padding-left: 60px;">
+                            <div class="heading-block bottommargin-sm border-0">
+                                <h3 class="nott" style="font-size: 46px; font-weight: 700; letter-spacing: -2px; line-height: 58px">Rete Us.</h3>
+                            </div>
+                           <!-- <p>Appropriately implement user friendly e-markets and backend processes. Competently expedite competitive vortals rather than client-based testing procedures. Professionally matrix exceptional schemas vis-a-vis leveraged paradigms. Authoritatively coordinate just in time networks with strategic potentialities.</p>
+                            <a href="#" class="button-link ml-0">Read More</a> -->
+                        </div>
+
+                        <div class="topmargin d-block d-lg-none d-xl-block"></div>
+
+                        <!-- Testimonials slider
+                        ============================================= -->
+                        <div class="col-md-5 offset-md-1">
+                           <!-- <h4 class="dark">Testimonials Scroller</h4> -->
+                            <div class="fslider testimonial" data-animation="slide" data-arrows="false">
+                                <div class="flexslider">
+
+                                    <div class="slider-wrap">
+                                        {% for feedobject in feedobjects %}
+                                        <div class="slide">
+                                            <div class="testimonial border-0 shadow-none">
+                                                <div class="testi-content">
+                                                    <p class="bottommargin-sm font-primary">{{ feedobject.feedback }}.</p>
+                                                    <div class="testi-meta">
+                                                        <span>{{ feedobject.username }}</span>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endfor %}
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Work
+            ============================================= -->
+           <!-- <div class="section bg-transparent pb-0 mb-0">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-lg-5 order-lg-12">
+                            <div class="device-xl device-md topmargin-lg"></div>
+                            <h3 class="mb-0" style="font-size: 40px;">Great Team Work.</h3>
+                            <h3 class="font-weight-light ls4 text-lowercase" style="font-size: 15px; color: #999;">Designed by Semicolonweb</h3>
+                            <p>Uniquely plagiarize dynamic convergence after equity invested experiences. Holisticly repurpose installed base infomediaries before web-enabled methods of empowerment.</p>
+                            <a href="#" class="button-link bottommargin">Read More</a>
+                        </div>
+
+                        <div class="col-lg-7 order-lg-1">
+                            <div style="position: relative; margin-bottom: 0;" class="overflow-hidden" data-height-xl="520" data-height-lg="520" data-height-md="520" data-height-sm="500" data-height-xs="300">
+                                <img class="man" src="{% static 'TurfApp/demos/business/images/sections/man.jpg'%}" style="position: absolute; top: 0; left: auto;" alt="Chrome">
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>   -->
+
+            <!-- Brands Carousel
+            ============================================= -->
+         <!--   <div class="section m-0 clearfix" style="padding: 80px 0">
+                <div id="oc-clients-full" class="owl-carousel owl-carousel-full image-carousel carousel-widget" data-margin="0" data-nav="false" data-pagi="false" data-loop="true" data-autoplay="3000" data-items-xs="2" data-items-sm="3" data-items-md="5" data-items-lg="5" data-items-xl="5">
+
+                    <div class="oc-item"><a href="#"><img src="{% static 'TurfApp/demos/business/images/clients/linkedin.svg'%}" style="height: 24px" alt="Brands"></a></div>
+                    <div class="oc-item"><a href="#"><img src="{% static 'TurfApp/demos/business/images/clients/nat-geo.svg'%}" style="height: 24px" alt="Brands"></a></div>
+                    <div class="oc-item"><a href="#"><img src="{% static 'TurfApp/demos/business/images/clients/jetblue.svg'%}" style="height: 24px" alt="Brands"></a></div>
+                    <div class="oc-item"><a href="#"><img src="{% static 'TurfApp/demos/business/images/clients/zillow.svg'%}" style="height: 24px" alt="Brands"></a></div>
+                    <div class="oc-item"><a href="#"><img src="{% static 'TurfApp/demos/business/images/clients/amazon.svg'%}" style="height: 24px" alt="Brands"></a></div>
+
+                </div>
+            </div>
+        </div>
+    </section>   --> <!-- #content end -->
+</div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+{% endblock %}
